@@ -1,0 +1,157 @@
+#Lists and dictionaries 
+
+# ------------------------------------------------ #
+'''largest_num'''
+
+# Write a function called largest_num which will take in a list of numbers and return the largest number from that list. Do not use any built-in methods to solve this problem.
+
+
+### YOUR CODE STARTS HERE ###
+
+def largest_num(list1):
+  biggest = list1[0]
+  for num in list1:
+    if num > biggest:
+      biggest = num
+  return biggest
+
+print(largest_num([3, 7, 4, 8, 9, 22])) 
+
+### YOUR CODE ENDS HERE ###
+
+
+# ------------------------------------------------ #
+'''includes'''
+
+# Write a function called includes that takes a list of numbers and a number as input. This function returns a boolean indicating whether or not the list contains the number. Do not use the list.index() method.
+
+
+### YOUR CODE STARTS HERE ###
+
+def includes(list1, num1):
+
+  for num in list1:
+    if num == num1:
+      return True
+
+  return False
+
+print(includes([3,6,9,4], 22))
+  
+### YOUR CODE ENDS HERE ###
+
+
+# ------------------------------------------------ #
+'''average'''
+
+# Write a function called average that takes in a list of numbers and returns a float representing the average value of the those numbers.
+
+
+### YOUR CODE STARTS HERE ###
+
+def average(list1):
+  if len(list1) == 0:
+    return 0.0
+  return sum(list1) / len(list1)
+
+print(average([3,6,9,5,55,3]))
+    
+
+
+### YOUR CODE ENDS HERE ###
+
+
+# ------------------------------------------------ #
+'''median'''
+
+# Write another function called median that takes in a list of numbers and returns a float representing the median from that list.
+
+
+### YOUR CODE STARTS HERE ###
+
+def median(list1):
+  
+  sortit = sorted(list1)
+  n = len(sortit)
+  if n == 0:
+    return 0.0
+  if n % 2 == 0:
+    return (sortit[n // 2 - 1] + sortit[n // 2]) / 2
+  else:
+    return sortit[n // 2]
+  
+
+print(median([5,88,2,4,9]))
+
+
+### YOUR CODE ENDS HERE ###
+
+
+# ------------------------------------------------ #
+'''only_a'''
+
+# Write a function called only_a that takes in a list of strings and returns a list of strings that contain the letter 'a'.
+
+
+### YOUR CODE STARTS HERE ###
+
+def only_a(list1):
+  
+  return [s for s in list1 if 'a' in s]
+
+
+### YOUR CODE ENDS HERE ###
+
+
+# ------------------------------------------------ #
+'''odd_couple'''
+
+# Write a function called odd_couple that takes a list and returns a list.
+
+# odd_couple should:
+
+  # return a list with the first two odd numbers of the input.
+  
+  # return a list with only one odd number if the input is only one odd number.
+  
+  # returns an empty list if the input has no odd numbers
+
+
+### YOUR CODE STARTS HERE ###
+
+def odd_couple(list1):
+  
+  answer = [n for n in list1 if n % 2 != 0]
+  if len(answer) == 0:
+    return []
+  elif len(answer) == 1:
+    return answer
+  else:
+    return answer[:2]
+
+print(odd_couple([3,2, 8,10,55]))
+  
+
+### YOUR CODE ENDS HERE ###
+
+
+# ------------------------------------------------ #
+'''overachiever'''
+
+# Write a function called overachiever which takes in a list of lists. The sublists contain both a name (string) of a student followed by a float representing his/her/their average for the class. Return the name of the student with the highest exam score.
+
+
+### YOUR CODE STARTS HERE ###
+
+def overachiever(list1):
+  highscore = 0.0
+  topstudent = None
+  for stu in list1:
+    if stu[1] > highscore:
+      highestscore = stu[1]
+      topstudent = stu[0]
+  return topstudent
+
+list1 = [['alice', 90], ['Bob', 78], ['charlie', 89]]
+overachiever(list1)
+### YOUR CODE ENDS HERE ###
