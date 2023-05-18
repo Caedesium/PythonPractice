@@ -1,4 +1,4 @@
-!#/usr/bin/env Python3
+#!/usr/bin/env Python3
 
 # This one was interesting. It's a QR code scanner, made for a fun project
 
